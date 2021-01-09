@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Test1.Views.PostPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:vm="clr-namespace:Test1.ViewModels"
+    Title="{Binding Title}">
+
+    <ContentPage.BindingContext>
+        <vm:PostViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ScrollView
+                Grid.Row="0"
+                BackgroundColor="Blue"
+                HorizontalScrollBarVisibility="Default"
+                VerticalScrollBarVisibility="Default">
+                <StackLayout>
+                    <RefreshView HorizontalOptions="CenterAndExpand">
+                        <CollectionView ItemsSource="{Binding Posts}" SelectionMode="None">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Frame
+                                        BorderColor="Orange"
+                                        CornerRadius="10"
+                                        HasShadow="True">
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <FormattedString.Spans>
+                                                        <Span
+                                                            FontAttributes="Bold"
+                                                            FontSize="20"
+                                                            Text="{Binding title}" />
+                                                        <Span Text="&#10;" />
+                                                        <Span FontSize="15" Text="{Binding content}" />
+                                                    </FormattedString.Spans>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Command="{Binding OpenWebCommand}" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </Frame>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </RefreshView>
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
