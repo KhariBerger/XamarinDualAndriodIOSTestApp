@@ -36,7 +36,7 @@ namespace Test1.Models
             this.backgroundImage = slideShow;
             this.posterName = posterName;
             this.archived = archived;
-            this.OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://xamarin.com"));
+            this.OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://includefaith.org/"));
     }
 
         private int postId { get; }
