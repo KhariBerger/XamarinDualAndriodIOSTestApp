@@ -15,6 +15,7 @@ namespace Test1.Views
         public PostPage()
         {
             InitializeComponent();
+
         }
     }
 }

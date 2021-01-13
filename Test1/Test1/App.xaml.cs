@@ -13,6 +13,7 @@ namespace Test1
 {
     public partial class App : Application
     {
+        public static string FilePath;
 
         public App()
         {
@@ -20,6 +21,16 @@ namespace Test1
 
             DependencyService.Register<MockDataStore>();
             MainPage = new MainPage();
+        }
+
+        public App(string filePath)
+        {
+            InitializeComponent();
+
+            DependencyService.Register<MockDataStore>();
+            MainPage = new MainPage();
+
+            FilePath = filePath;
         }
 
         protected override void OnStart()

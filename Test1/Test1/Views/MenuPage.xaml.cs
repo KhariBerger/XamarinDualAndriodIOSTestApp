@@ -22,7 +22,8 @@ namespace Test1.Views
             {
                 new HomeMenuItem {Id = MenuItemType.Browse, Title="Browse" },
                 new HomeMenuItem {Id = MenuItemType.About, Title="About" },
-                new HomeMenuItem {Id = MenuItemType.Post, Title="Whats New!" }
+                new HomeMenuItem {Id = MenuItemType.Blog, Title="Whats New!" },
+                new HomeMenuItem {Id = MenuItemType.CreatePost, Title="Create Post" }
             };
 
             ListViewMenu.ItemsSource = menuItems;

@@ -4,14 +4,19 @@ using System.Text;
 using System.Windows.Input;
 using Xamarin.Essentials;
 using Xamarin.Forms;
+using SQLite;
+
 
 namespace Test1.Models
 {
-    /// <summary>
-    /// backgroundColor is a hex color
-    /// </summary>
+    [Table("Post")]
     public class Post
     {
+        //Default
+        public Post()
+        {
+        }
+
         /// <summary>
         /// Creates a Post Object
         /// </summary>
@@ -25,7 +30,7 @@ namespace Test1.Models
         /// <param name="fontColor">Color of font for post</param>
         /// <param name="archived">Lets the application know if it should the post</param>
         /// <param name="postID">Used to identify post</param>
-        public Post(int postId, string title, string content, string onClick, string webLink, string posterName = "Church", bool archived = false, string backgroundColor = "779999", string fontColor = "000000", string slideShow = "")
+        public Post(int postId, string title, string content, string onClick, string webLink, string posterName = "Church", bool archived = false, bool edited = false, string backgroundColor = "779999", string backgroundImage = "", string fontColor = "000000", string slideShow = "")
         {
             this.postId = postId;
             this.title = title;
@@ -33,21 +38,26 @@ namespace Test1.Models
             this.onClick = onClick;
             this.webLink = webLink;
             this.backgroundColor = backgroundColor;
-            this.backgroundImage = slideShow;
+            this.backgroundImage = backgroundImage;
             this.posterName = posterName;
             this.archived = archived;
+            this.edited = edited;
+            this.slideShow = slideShow;
             this.OpenWebCommand = new Command(async () => await Browser.OpenAsync("https://includefaith.org/"));
-    }
+        }
 
-        private int postId { get; }
+        [PrimaryKey, AutoIncrement]
+        public int postId { get; }
         public string title { get; set; }
         public string content { get; set; }
-        private string onClick { get; set; }
-        private string webLink { get; set; }
-        private string backgroundColor { get; set; }
-        private string backgroundImage { get; set; }
-        private string posterName { get; set; }
-        private bool archived { get; set; }
+        public string onClick { get; set; }
+        public string webLink { get; set; }
+        public string backgroundColor { get; set; }
+        public string backgroundImage { get; set; }
+        public string posterName { get; set; }
+        public bool archived { get; set; }
+        public bool edited { get; set; }
+        public string slideShow { get; set; }
 
         public ICommand OpenWebCommand { get; set; }
     }

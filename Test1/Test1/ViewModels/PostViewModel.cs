@@ -24,13 +24,13 @@ namespace Test1.ViewModels
             RefreshCommand = new Command(async () => await refreshPost());
             Posts = new ObservableCollection<Post>();
             //Add a test post
-            Posts.Add(GeneratePost());
-            Posts.Add(GeneratePost());
-            Posts.Add(GeneratePost());
-            Posts.Add(GeneratePost());
-            Posts.Add(GeneratePost());
-            Posts.Add(GeneratePost());
-            Posts.Add(GeneratePost());
+            //Posts.Add(GeneratePost());
+            //Posts.Add(GeneratePost());
+            //Posts.Add(GeneratePost());
+            //Posts.Add(GeneratePost());
+            //Posts.Add(GeneratePost());
+            //Posts.Add(GeneratePost());
+            //Posts.Add(GeneratePost());
         }
 
         public string Title { get; }
@@ -47,6 +47,7 @@ namespace Test1.ViewModels
 
             return p;
         }
+
 
         private async Task refreshPost()
         {

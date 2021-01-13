@@ -36,8 +36,11 @@ namespace Test1.Views
                     case (int)MenuItemType.About:
                         MenuPages.Add(id, new NavigationPage(new AboutPage()));
                         break;
-                    case (int)MenuItemType.Post:
+                    case (int)MenuItemType.Blog:
                         MenuPages.Add(id, new NavigationPage(new PostPage()));
+                        break;
+                    case (int)MenuItemType.CreatePost:
+                        MenuPages.Add(id, new NavigationPage(new CreatePostPage()));
                         break;
                 }
             }

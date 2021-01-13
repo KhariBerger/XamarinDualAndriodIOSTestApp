@@ -25,7 +25,10 @@
                 HorizontalScrollBarVisibility="Default"
                 VerticalScrollBarVisibility="Default">
                 <StackLayout>
-                    <RefreshView HorizontalOptions="CenterAndExpand" IsRefreshing="{Binding IsRefreshing}" RefreshColor="WhiteSmoke">
+                    <RefreshView
+                        HorizontalOptions="CenterAndExpand"
+                        IsRefreshing="{Binding IsRefreshing}"
+                        RefreshColor="#779999">
                         <CollectionView ItemsSource="{Binding Posts}" SelectionMode="None">
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>

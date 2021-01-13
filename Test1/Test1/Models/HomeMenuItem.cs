@@ -8,7 +8,8 @@ namespace Test1.Models
     {
         Browse,
         About,
-        Post
+        Blog,
+        CreatePost
     }
     public class HomeMenuItem
     {

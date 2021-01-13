@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Test1.Views.CreatePostPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+
+    <ContentPage.Content>
+        <StackLayout Margin="20,20,20,0">
+            <Entry x:Name="titleEntry" Placeholder="Title" />
+            <Entry x:Name="contentEntry" Placeholder="Content" />
+            <Entry x:Name="onClickEntry" Placeholder="onClick" />
+            <Entry x:Name="webLinkEntry" Placeholder="WebLink" />
+            <Button
+                x:Name="saveButton"
+                Clicked="saveButton_Clicked"
+                Text="Post!" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
